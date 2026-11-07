@@ -1,0 +1,11 @@
+horizon: 48
+dt: 1.0
+therapeutic_low: 3.0
+therapeutic_high: 7.0
+clearance: 0.18
+volume: 3.2
+healing_rate: 0.05
+damage_gain: 0.12
+nutrition_gain: 0.08
+burden_sensitivity: 0.9
+seed: 0

@@ -1,0 +1,4 @@
+name: supplementary_cross_dataset
+cohort:
+  protocol: multilabel
+  n_labels: 200

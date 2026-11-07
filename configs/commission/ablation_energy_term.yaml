@@ -1,0 +1,4 @@
+name: ablation_energy_term
+use_energy: false
+use_shaping: true
+use_fusion: true

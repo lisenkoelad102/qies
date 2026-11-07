@@ -1,0 +1,11 @@
+gamma: 0.97
+shaping_c: 1.0
+interaction_penalty: 0.5
+hidden: 64
+lr: 0.0003
+episodes: 200
+value_coef: 0.5
+entropy_coef: 0.01
+interval_low: 4.0
+interval_high: 8.0
+seed: 0

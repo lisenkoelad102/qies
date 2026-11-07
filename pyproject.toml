@@ -1,0 +1,85 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qies_control"
+version = "0.1.0"
+description = "Quantum interaction-energy-shaped closed-loop control for Crohn's biologic dosing and enteral nutrition"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "QIES-Control study team" }]
+keywords = [
+    "variational quantum eigensolver",
+    "quantum approximate optimization",
+    "drug interaction",
+    "enteral nutrition",
+    "reinforcement learning",
+    "digital twin",
+]
+dependencies = [
+    "torch==2.11.*",
+    "numpy>=2.2,<2.5",
+    "scipy>=1.15,<1.18",
+    "scikit-learn>=1.7,<1.9",
+    "networkx>=3.4,<3.7",
+    "omegaconf>=2.3,<2.4",
+    "cyclopts>=4.0,<5",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8,<10",
+    "mypy>=1.15",
+    "ruff>=0.8",
+    "black>=24",
+    "isort>=5.13",
+    "pre-commit>=3.7",
+]
+
+[project.scripts]
+qies-control = "qies_control.docket.app:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+qies_control = ["py.typed"]
+
+[tool.ruff]
+line-length = 100
+src = ["src", "tests"]
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W", "UP", "B", "C4", "SIM"]
+ignore = ["B008"]
+
+[tool.black]
+line-length = 100
+target-version = ["py311"]
+
+[tool.isort]
+profile = "black"
+line_length = 100
+src_paths = ["src", "tests"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+no_implicit_optional = true
+plugins = []
+files = ["src/qies_control"]
+
+[[tool.mypy.overrides]]
+module = ["sklearn.*", "scipy.*", "networkx.*", "omegaconf.*", "cyclopts.*"]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+pythonpath = ["src"]
+filterwarnings = ["ignore::DeprecationWarning"]

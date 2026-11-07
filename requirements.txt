@@ -1,0 +1,7 @@
+torch==2.11.*
+numpy>=2.2,<2.5
+scipy>=1.15,<1.18
+scikit-learn>=1.7,<1.9
+networkx>=3.4,<3.7
+omegaconf>=2.3,<2.4
+cyclopts>=4.0,<5

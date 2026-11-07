@@ -1,0 +1,7 @@
+n_patients: 64
+n_agents: 5
+feature_dim: 8
+protocol: relation
+n_labels: 86
+edge_density: 0.6
+seed: 0
